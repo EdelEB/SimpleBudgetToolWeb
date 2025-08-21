@@ -1,0 +1,970 @@
+{
+  "federal": {
+    "brackets": [
+      {
+        "lower": 0,
+        "upper": 11925,
+        "rate": 0.1
+      },
+      {
+        "lower": 11925,
+        "upper": 48475,
+        "rate": 0.12
+      },
+      {
+        "lower": 48475,
+        "upper": 103350,
+        "rate": 0.22
+      },
+      {
+        "lower": 103350,
+        "upper": 197300,
+        "rate": 0.24
+      },
+      {
+        "lower": 197300,
+        "upper": 250525,
+        "rate": 0.32
+      },
+      {
+        "lower": 250525,
+        "upper": 626350,
+        "rate": 0.35
+      },
+      {
+        "lower": 626350,
+        "upper": "INF",
+        "rate": 0.37
+      }
+    ]
+  },
+  "fica": {
+    "oasdi_rate": 0.062,
+    "oasdi_wage_base": 176100,
+    "medicare_rate": 0.0145
+  },
+  "states": {
+    "Alaska": {
+      "type": "none"
+    },
+    "Florida": {
+      "type": "none"
+    },
+    "Nevada": {
+      "type": "none"
+    },
+    "South Dakota": {
+      "type": "none"
+    },
+    "Tennessee": {
+      "type": "none"
+    },
+    "Texas": {
+      "type": "none"
+    },
+    "Washington": {
+      "type": "none"
+    },
+    "Wyoming": {
+      "type": "none"
+    },
+    "New Hampshire": {
+      "type": "none"
+    },
+    "Arizona": {
+      "type": "flat",
+      "rate": 0.025
+    },
+    "Colorado": {
+      "type": "flat",
+      "rate": 0.044
+    },
+    "Georgia": {
+      "type": "flat",
+      "rate": 0.0575
+    },
+    "Idaho": {
+      "type": "flat",
+      "rate": 0.058
+    },
+    "Illinois": {
+      "type": "flat",
+      "rate": 0.0495
+    },
+    "Indiana": {
+      "type": "flat",
+      "rate": 0.0315
+    },
+    "Iowa": {
+      "type": "flat",
+      "rate": 0.0379
+    },
+    "Kentucky": {
+      "type": "flat",
+      "rate": 0.045
+    },
+    "Michigan": {
+      "type": "flat",
+      "rate": 0.0425
+    },
+    "Mississippi": {
+      "type": "flat",
+      "rate": 0.05
+    },
+    "North Carolina": {
+      "type": "flat",
+      "rate": 0.0475
+    },
+    "Pennsylvania": {
+      "type": "flat",
+      "rate": 0.0307
+    },
+    "Utah": {
+      "type": "flat",
+      "rate": 0.0465
+    },
+    "Alabama": {
+      "type": "brackets",
+      "brackets": [
+        {
+          "lower": 0,
+          "upper": 500,
+          "rate": 0.02
+        },
+        {
+          "lower": 500,
+          "upper": 3000,
+          "rate": 0.04
+        },
+        {
+          "lower": 3000,
+          "upper": "INF",
+          "rate": 0.05
+        }
+      ]
+    },
+    "Arkansas": {
+      "type": "brackets",
+      "brackets": [
+        {
+          "lower": 0,
+          "upper": 4400,
+          "rate": 0.02
+        },
+        {
+          "lower": 4400,
+          "upper": 8800,
+          "rate": 0.04
+        },
+        {
+          "lower": 8800,
+          "upper": "INF",
+          "rate": 0.049
+        }
+      ]
+    },
+    "California": {
+      "type": "brackets",
+      "brackets": [
+        {
+          "lower": 0,
+          "upper": 10412,
+          "rate": 0.01
+        },
+        {
+          "lower": 10412,
+          "upper": 24684,
+          "rate": 0.02
+        },
+        {
+          "lower": 24684,
+          "upper": 38959,
+          "rate": 0.04
+        },
+        {
+          "lower": 38959,
+          "upper": 54081,
+          "rate": 0.06
+        },
+        {
+          "lower": 54081,
+          "upper": 68350,
+          "rate": 0.08
+        },
+        {
+          "lower": 68350,
+          "upper": 349137,
+          "rate": 0.093
+        },
+        {
+          "lower": 349137,
+          "upper": 418961,
+          "rate": 0.103
+        },
+        {
+          "lower": 418961,
+          "upper": 698271,
+          "rate": 0.113
+        },
+        {
+          "lower": 698271,
+          "upper": "INF",
+          "rate": 0.123
+        }
+      ]
+    },
+    "Connecticut": {
+      "type": "brackets",
+      "brackets": [
+        {
+          "lower": 0,
+          "upper": 10000,
+          "rate": 0.03
+        },
+        {
+          "lower": 10000,
+          "upper": 50000,
+          "rate": 0.05
+        },
+        {
+          "lower": 50000,
+          "upper": 100000,
+          "rate": 0.055
+        },
+        {
+          "lower": 100000,
+          "upper": 200000,
+          "rate": 0.06
+        },
+        {
+          "lower": 200000,
+          "upper": 250000,
+          "rate": 0.065
+        },
+        {
+          "lower": 250000,
+          "upper": 500000,
+          "rate": 0.069
+        },
+        {
+          "lower": 500000,
+          "upper": "INF",
+          "rate": 0.0699
+        }
+      ]
+    },
+    "Delaware": {
+      "type": "brackets",
+      "brackets": [
+        {
+          "lower": 0,
+          "upper": 2000,
+          "rate": 0.022
+        },
+        {
+          "lower": 2000,
+          "upper": 5000,
+          "rate": 0.039
+        },
+        {
+          "lower": 5000,
+          "upper": 10000,
+          "rate": 0.048
+        },
+        {
+          "lower": 10000,
+          "upper": 20000,
+          "rate": 0.052
+        },
+        {
+          "lower": 20000,
+          "upper": 25000,
+          "rate": 0.0555
+        },
+        {
+          "lower": 25000,
+          "upper": 60000,
+          "rate": 0.066
+        },
+        {
+          "lower": 60000,
+          "upper": "INF",
+          "rate": 0.066
+        }
+      ]
+    },
+    "Hawaii": {
+      "type": "brackets",
+      "brackets": [
+        {
+          "lower": 0,
+          "upper": 2400,
+          "rate": 0.014
+        },
+        {
+          "lower": 2400,
+          "upper": 4800,
+          "rate": 0.032
+        },
+        {
+          "lower": 4800,
+          "upper": 9600,
+          "rate": 0.055
+        },
+        {
+          "lower": 9600,
+          "upper": 14400,
+          "rate": 0.064
+        },
+        {
+          "lower": 14400,
+          "upper": 19200,
+          "rate": 0.068
+        },
+        {
+          "lower": 19200,
+          "upper": 24000,
+          "rate": 0.072
+        },
+        {
+          "lower": 24000,
+          "upper": 36000,
+          "rate": 0.076
+        },
+        {
+          "lower": 36000,
+          "upper": 48000,
+          "rate": 0.079
+        },
+        {
+          "lower": 48000,
+          "upper": 150000,
+          "rate": 0.0825
+        },
+        {
+          "lower": 150000,
+          "upper": "INF",
+          "rate": 0.11
+        }
+      ]
+    },
+    "Kansas": {
+      "type": "brackets",
+      "brackets": [
+        {
+          "lower": 0,
+          "upper": 15000,
+          "rate": 0.031
+        },
+        {
+          "lower": 15000,
+          "upper": 30000,
+          "rate": 0.0525
+        },
+        {
+          "lower": 30000,
+          "upper": "INF",
+          "rate": 0.057
+        }
+      ]
+    },
+    "Louisiana": {
+      "type": "brackets",
+      "brackets": [
+        {
+          "lower": 0,
+          "upper": 12500,
+          "rate": 0.0185
+        },
+        {
+          "lower": 12500,
+          "upper": 50000,
+          "rate": 0.035
+        },
+        {
+          "lower": 50000,
+          "upper": "INF",
+          "rate": 0.0425
+        }
+      ]
+    },
+    "Maine": {
+      "type": "brackets",
+      "brackets": [
+        {
+          "lower": 0,
+          "upper": 24500,
+          "rate": 0.058
+        },
+        {
+          "lower": 24500,
+          "upper": 58050,
+          "rate": 0.0675
+        },
+        {
+          "lower": 58050,
+          "upper": "INF",
+          "rate": 0.0715
+        }
+      ]
+    },
+    "Maryland": {
+      "type": "brackets",
+      "brackets": [
+        {
+          "lower": 0,
+          "upper": 1000,
+          "rate": 0.02
+        },
+        {
+          "lower": 1000,
+          "upper": 2000,
+          "rate": 0.03
+        },
+        {
+          "lower": 2000,
+          "upper": 3000,
+          "rate": 0.04
+        },
+        {
+          "lower": 3000,
+          "upper": 100000,
+          "rate": 0.0475
+        },
+        {
+          "lower": 100000,
+          "upper": 125000,
+          "rate": 0.05
+        },
+        {
+          "lower": 125000,
+          "upper": 150000,
+          "rate": 0.0525
+        },
+        {
+          "lower": 150000,
+          "upper": 250000,
+          "rate": 0.055
+        },
+        {
+          "lower": 250000,
+          "upper": "INF",
+          "rate": 0.0575
+        }
+      ]
+    },
+    "Massachusetts": {
+      "type": "brackets",
+      "brackets": [
+        {
+          "lower": 0,
+          "upper": "INF",
+          "rate": 0.05
+        }
+      ],
+      "surtaxes": [
+        {
+          "lower": 1083150,
+          "upper": "INF",
+          "rate": 0.04
+        }
+      ],
+      "note": "Base 5% plus 4% surtax over threshold; single filer modeled."
+    },
+    "Minnesota": {
+      "type": "brackets",
+      "brackets": [
+        {
+          "lower": 0,
+          "upper": 31560,
+          "rate": 0.0535
+        },
+        {
+          "lower": 31560,
+          "upper": 103050,
+          "rate": 0.068
+        },
+        {
+          "lower": 103050,
+          "upper": 186300,
+          "rate": 0.0785
+        },
+        {
+          "lower": 186300,
+          "upper": "INF",
+          "rate": 0.0985
+        }
+      ]
+    },
+    "Missouri": {
+      "type": "brackets",
+      "brackets": [
+        {
+          "lower": 0,
+          "upper": 1121,
+          "rate": 0.0
+        },
+        {
+          "lower": 1121,
+          "upper": 2242,
+          "rate": 0.02
+        },
+        {
+          "lower": 2242,
+          "upper": 3363,
+          "rate": 0.025
+        },
+        {
+          "lower": 3363,
+          "upper": 4484,
+          "rate": 0.03
+        },
+        {
+          "lower": 4484,
+          "upper": 5605,
+          "rate": 0.035
+        },
+        {
+          "lower": 5605,
+          "upper": 6726,
+          "rate": 0.04
+        },
+        {
+          "lower": 6726,
+          "upper": 7847,
+          "rate": 0.045
+        },
+        {
+          "lower": 7847,
+          "upper": 8968,
+          "rate": 0.05
+        },
+        {
+          "lower": 8968,
+          "upper": "INF",
+          "rate": 0.045
+        }
+      ]
+    },
+    "Montana": {
+      "type": "brackets",
+      "brackets": [
+        {
+          "lower": 0,
+          "upper": 3800,
+          "rate": 0.043
+        },
+        {
+          "lower": 3800,
+          "upper": 6800,
+          "rate": 0.052
+        },
+        {
+          "lower": 6800,
+          "upper": "INF",
+          "rate": 0.059
+        }
+      ]
+    },
+    "Nebraska": {
+      "type": "brackets",
+      "brackets": [
+        {
+          "lower": 0,
+          "upper": 3650,
+          "rate": 0.0246
+        },
+        {
+          "lower": 3650,
+          "upper": 21810,
+          "rate": 0.0351
+        },
+        {
+          "lower": 21810,
+          "upper": 35000,
+          "rate": 0.0501
+        },
+        {
+          "lower": 35000,
+          "upper": "INF",
+          "rate": 0.0584
+        }
+      ]
+    },
+    "New Jersey": {
+      "type": "brackets",
+      "brackets": [
+        {
+          "lower": 0,
+          "upper": 20000,
+          "rate": 0.014
+        },
+        {
+          "lower": 20000,
+          "upper": 35000,
+          "rate": 0.0175
+        },
+        {
+          "lower": 35000,
+          "upper": 40000,
+          "rate": 0.035
+        },
+        {
+          "lower": 40000,
+          "upper": 75000,
+          "rate": 0.05525
+        },
+        {
+          "lower": 75000,
+          "upper": 500000,
+          "rate": 0.0637
+        },
+        {
+          "lower": 500000,
+          "upper": 1000000,
+          "rate": 0.0897
+        },
+        {
+          "lower": 1000000,
+          "upper": "INF",
+          "rate": 0.1075
+        }
+      ]
+    },
+    "New Mexico": {
+      "type": "brackets",
+      "brackets": [
+        {
+          "lower": 0,
+          "upper": 5500,
+          "rate": 0.017
+        },
+        {
+          "lower": 5500,
+          "upper": 11000,
+          "rate": 0.032
+        },
+        {
+          "lower": 11000,
+          "upper": 16000,
+          "rate": 0.047
+        },
+        {
+          "lower": 16000,
+          "upper": 210000,
+          "rate": 0.049
+        },
+        {
+          "lower": 210000,
+          "upper": "INF",
+          "rate": 0.059
+        }
+      ]
+    },
+    "New York": {
+      "type": "brackets",
+      "brackets": [
+        {
+          "lower": 0,
+          "upper": 8500,
+          "rate": 0.04
+        },
+        {
+          "lower": 8500,
+          "upper": 11700,
+          "rate": 0.045
+        },
+        {
+          "lower": 11700,
+          "upper": 13900,
+          "rate": 0.0525
+        },
+        {
+          "lower": 13900,
+          "upper": 21400,
+          "rate": 0.055
+        },
+        {
+          "lower": 21400,
+          "upper": 80650,
+          "rate": 0.06
+        },
+        {
+          "lower": 80650,
+          "upper": 215400,
+          "rate": 0.065
+        },
+        {
+          "lower": 215400,
+          "upper": 1077550,
+          "rate": 0.0685
+        },
+        {
+          "lower": 1077550,
+          "upper": "INF",
+          "rate": 0.0882
+        }
+      ]
+    },
+    "North Dakota": {
+      "type": "brackets",
+      "brackets": [
+        {
+          "lower": 0,
+          "upper": 44000,
+          "rate": 0.0195
+        },
+        {
+          "lower": 44000,
+          "upper": 200000,
+          "rate": 0.0227
+        },
+        {
+          "lower": 200000,
+          "upper": "INF",
+          "rate": 0.029
+        }
+      ]
+    },
+    "Ohio": {
+      "type": "brackets",
+      "brackets": [
+        {
+          "lower": 0,
+          "upper": 26050,
+          "rate": 0.0
+        },
+        {
+          "lower": 26050,
+          "upper": 100000,
+          "rate": 0.0275
+        },
+        {
+          "lower": 100000,
+          "upper": 115300,
+          "rate": 0.032
+        },
+        {
+          "lower": 115300,
+          "upper": "INF",
+          "rate": 0.035
+        }
+      ]
+    },
+    "Oklahoma": {
+      "type": "brackets",
+      "brackets": [
+        {
+          "lower": 0,
+          "upper": 1000,
+          "rate": 0.0025
+        },
+        {
+          "lower": 1000,
+          "upper": 2500,
+          "rate": 0.0075
+        },
+        {
+          "lower": 2500,
+          "upper": 3750,
+          "rate": 0.0175
+        },
+        {
+          "lower": 3750,
+          "upper": 4900,
+          "rate": 0.0275
+        },
+        {
+          "lower": 4900,
+          "upper": 7200,
+          "rate": 0.0375
+        },
+        {
+          "lower": 7200,
+          "upper": "INF",
+          "rate": 0.0475
+        }
+      ]
+    },
+    "Oregon": {
+      "type": "brackets",
+      "brackets": [
+        {
+          "lower": 0,
+          "upper": 4050,
+          "rate": 0.0475
+        },
+        {
+          "lower": 4050,
+          "upper": 10200,
+          "rate": 0.0675
+        },
+        {
+          "lower": 10200,
+          "upper": 125000,
+          "rate": 0.0875
+        },
+        {
+          "lower": 125000,
+          "upper": "INF",
+          "rate": 0.099
+        }
+      ]
+    },
+    "Rhode Island": {
+      "type": "brackets",
+      "brackets": [
+        {
+          "lower": 0,
+          "upper": 78250,
+          "rate": 0.0375
+        },
+        {
+          "lower": 78250,
+          "upper": 177400,
+          "rate": 0.0475
+        },
+        {
+          "lower": 177400,
+          "upper": "INF",
+          "rate": 0.0599
+        }
+      ]
+    },
+    "South Carolina": {
+      "type": "brackets",
+      "brackets": [
+        {
+          "lower": 0,
+          "upper": 3390,
+          "rate": 0.0
+        },
+        {
+          "lower": 3390,
+          "upper": 6780,
+          "rate": 0.03
+        },
+        {
+          "lower": 6780,
+          "upper": 10170,
+          "rate": 0.04
+        },
+        {
+          "lower": 10170,
+          "upper": 13560,
+          "rate": 0.05
+        },
+        {
+          "lower": 13560,
+          "upper": "INF",
+          "rate": 0.064
+        }
+      ]
+    },
+    "Vermont": {
+      "type": "brackets",
+      "brackets": [
+        {
+          "lower": 0,
+          "upper": 42150,
+          "rate": 0.0335
+        },
+        {
+          "lower": 42150,
+          "upper": 102200,
+          "rate": 0.066
+        },
+        {
+          "lower": 102200,
+          "upper": 213150,
+          "rate": 0.076
+        },
+        {
+          "lower": 213150,
+          "upper": "INF",
+          "rate": 0.0875
+        }
+      ]
+    },
+    "Virginia": {
+      "type": "brackets",
+      "brackets": [
+        {
+          "lower": 0,
+          "upper": 3000,
+          "rate": 0.02
+        },
+        {
+          "lower": 3000,
+          "upper": 5000,
+          "rate": 0.03
+        },
+        {
+          "lower": 5000,
+          "upper": 17000,
+          "rate": 0.05
+        },
+        {
+          "lower": 17000,
+          "upper": "INF",
+          "rate": 0.0575
+        }
+      ]
+    },
+    "West Virginia": {
+      "type": "brackets",
+      "brackets": [
+        {
+          "lower": 0,
+          "upper": 10000,
+          "rate": 0.0236
+        },
+        {
+          "lower": 10000,
+          "upper": 25000,
+          "rate": 0.0315
+        },
+        {
+          "lower": 25000,
+          "upper": 40000,
+          "rate": 0.0354
+        },
+        {
+          "lower": 40000,
+          "upper": 60000,
+          "rate": 0.0465
+        },
+        {
+          "lower": 60000,
+          "upper": "INF",
+          "rate": 0.0512
+        }
+      ]
+    },
+    "Wisconsin": {
+      "type": "brackets",
+      "brackets": [
+        {
+          "lower": 0,
+          "upper": 14320,
+          "rate": 0.0354
+        },
+        {
+          "lower": 14320,
+          "upper": 28640,
+          "rate": 0.04065
+        },
+        {
+          "lower": 28640,
+          "upper": 315710,
+          "rate": 0.053
+        },
+        {
+          "lower": 315710,
+          "upper": "INF",
+          "rate": 0.0765
+        }
+      ]
+    }
+  }
+}
