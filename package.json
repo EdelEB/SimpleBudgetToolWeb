@@ -20,7 +20,7 @@
     "recharts": "^3.1.2",
     "web-vitals": "^2.1.4"
   },
-  "homepage": "https://EdelEB.github.io/EdelEB.github.io",
+  "homepage": "https://EdelEB.github.io",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
