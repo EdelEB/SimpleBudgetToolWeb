@@ -99,7 +99,7 @@ const TAX_GREYS = {
   oasdi: "#6B7280",
   medicare: "#9CA3AF",
   medicare_addl: "#D1D5DB",
-  state: "#111827",
+  state: "#575757ff",
 };
 const DISCRETIONARY_COLOR = "#2E7D32";
 
@@ -827,16 +827,16 @@ export default function SimpleBudgetTool(): JSX.Element {
         </div>
 
         {/* Main content: table left, pie right */}
-        <div style={{ display: "grid", gridTemplateColumns: "1.3fr 1fr", gap: 16, alignItems: "start" }}>
+        <div style={{ width:"115%", display: "grid", gridTemplateColumns: "1.3fr 1fr", gap: 16, alignItems: "start" }}>
           {/* Table */}
           <div style={{ background: cardBg, border, borderRadius: 10, overflow: "hidden" }}>
             <div style={{ overflowX: "auto" }}>
-              <table style={{ width: "100%", borderCollapse: "separate", borderSpacing: 0, tableLayout: "fixed" }}>
+              <table style={{ width: "70%", borderCollapse: "separate", borderSpacing: 0, tableLayout: "fixed" }}>
                 <colgroup>
-                  <col style={{ width: 280 }} />
-                  <col style={{ width: 180 }} />
-                  <col style={{ width: 170 }} />
-                  <col style={{ width: 210 }} />
+                  <col style={{ width: 240 }} />
+                  <col style={{ width: 150 }} />
+                  <col style={{ width: 140 }} />
+                  <col style={{ width: 200 }} />
                 </colgroup>
                 <thead>
                   <tr style={{ background: "#e5e7eb" }}>
@@ -848,9 +848,8 @@ export default function SimpleBudgetTool(): JSX.Element {
                 </thead>
                 <tbody>
                   {calc.rows.map((row) => {
-                    const dark = isDark(row.color);
-                    const textColor = dark ? "#ffffff" : "#111827";
-                    const borderRow = dark ? "rgba(255,255,255,0.25)" : "rgba(0,0,0,0.08)";
+                    const textColor = "#000000ff";
+                    const borderRow = "rgba(39, 39, 41, 0.82)";
                     const isUser = row.kind === "user";
                     const userRow = isUser ? (row as UserExpense) : undefined;
 
@@ -901,7 +900,6 @@ export default function SimpleBudgetTool(): JSX.Element {
                           }}
                         >
                           <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-                            <DragHandle row={row} muted />
                             {isUser ? (
                               <input
                                 type="number"
@@ -915,7 +913,7 @@ export default function SimpleBudgetTool(): JSX.Element {
                                   borderRadius: 6,
                                   padding: "6px 8px",
                                   color: textColor,
-                                  width: 130,
+                                  width: 100,
                                 }}
                               />
                             ) : (
@@ -934,7 +932,6 @@ export default function SimpleBudgetTool(): JSX.Element {
                           }}
                         >
                           <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-                            <DragHandle row={row} muted />
                             {isUser ? (
                               <>
                                 <input
@@ -949,7 +946,7 @@ export default function SimpleBudgetTool(): JSX.Element {
                                     borderRadius: 6,
                                     padding: "6px 8px",
                                     color: textColor,
-                                    width: 120,
+                                    width: 75,
                                   }}
                                 />
                                 <span>%</span>
@@ -970,7 +967,6 @@ export default function SimpleBudgetTool(): JSX.Element {
                           }}
                         >
                           <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-                            <DragHandle row={row} muted />
                             {isUser && !userRow!.isPreTax ? (
                               <>
                                 <input
@@ -985,7 +981,7 @@ export default function SimpleBudgetTool(): JSX.Element {
                                     borderRadius: 6,
                                     padding: "6px 8px",
                                     color: textColor,
-                                    width: 140,
+                                    width: 75,
                                   }}
                                 />
                                 <span>%</span>
@@ -1004,7 +1000,7 @@ export default function SimpleBudgetTool(): JSX.Element {
           </div>
 
           {/* Pie chart and tax rates */}
-          <div style={{ background: cardBg, border, borderRadius: 12, padding: 8 }}>
+          <div style={{ width: "70%", background: cardBg, border, borderRadius: 12, padding: 8 }}>
             <div style={{ width: "100%", height: 300 }}>
               <ResponsiveContainer>
                 <PieChart>
