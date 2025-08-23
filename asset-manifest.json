@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/SimpleBudgetToolWeb/static/css/main.70531dd7.css",
-    "main.js": "/SimpleBudgetToolWeb/static/js/main.fb2e6b13.js",
+    "main.js": "/SimpleBudgetToolWeb/static/js/main.e9e69451.js",
     "static/js/453.c9394827.chunk.js": "/SimpleBudgetToolWeb/static/js/453.c9394827.chunk.js",
     "index.html": "/SimpleBudgetToolWeb/index.html",
     "main.70531dd7.css.map": "/SimpleBudgetToolWeb/static/css/main.70531dd7.css.map",
-    "main.fb2e6b13.js.map": "/SimpleBudgetToolWeb/static/js/main.fb2e6b13.js.map",
+    "main.e9e69451.js.map": "/SimpleBudgetToolWeb/static/js/main.e9e69451.js.map",
     "453.c9394827.chunk.js.map": "/SimpleBudgetToolWeb/static/js/453.c9394827.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.70531dd7.css",
-    "static/js/main.fb2e6b13.js"
+    "static/js/main.e9e69451.js"
   ]
 }
