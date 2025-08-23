@@ -95,25 +95,25 @@ const TF_FACTORS: Record<Timeframe, number> = {
 };
 
 const TAX_GREYS = {
-  federal: "#4B5563",
-  oasdi: "#6B7280",
-  medicare: "#9CA3AF",
-  medicare_addl: "#D1D5DB",
-  state: "#575757ff",
+  federal: "#64656680",
+  oasdi: "#7b7e8380",
+  medicare: "#9e9f9c80",
+  medicare_addl: "#d4d4d480",
+  state: "#57575780",
 };
-const DISCRETIONARY_COLOR = "#2E7D32";
+const DISCRETIONARY_COLOR = "#2e7d3280";
 
 const DEFAULT_ROW_COLORS = [
-  "#4F46E5",
-  "#0EA5E9",
-  "#10B981",
-  "#F59E0B",
-  "#EF4444",
-  "#8B5CF6",
-  "#22C55E",
-  "#06B6D4",
-  "#E11D48",
-  "#84CC16",
+  "#4F4680",
+  "#0EA580",
+  "#10B980",
+  "#F59E80",
+  "#EF4480",
+  "#8B5C80",
+  "#22C580",
+  "#06B680",
+  "#E11D80",
+  "#84CC80",
 ];
 
 function currencyRounded(n: number): string {
@@ -230,7 +230,7 @@ export default function SimpleBudgetTool() {
       id: id(),
       kind: "user",
       name: "Rent",
-      color: "#feb537ab",
+      color: "#feb53780",
       isPreTax: false,
       inputTimeframe: "month",
       order: 0,
@@ -240,7 +240,7 @@ export default function SimpleBudgetTool() {
       id: id(),
       kind: "user",
       name: "Groceries",
-      color: "#e3fb49c3",
+      color: "#e3fb4980",
       isPreTax: false,
       inputTimeframe: "month",
       order: 1,
@@ -263,7 +263,7 @@ export default function SimpleBudgetTool() {
     percent: number; // 0-100
   }>({
     name: "",
-    color: DEFAULT_ROW_COLORS[0],
+    color: DEFAULT_ROW_COLORS[0] + "80",
     isPreTax: false,
     defineBy: "amount",
     amount: 0,
@@ -495,7 +495,7 @@ export default function SimpleBudgetTool() {
   const openAddModal = () => {
     setAddForm({
       name: "",
-      color: DEFAULT_ROW_COLORS[userExpenses.length % DEFAULT_ROW_COLORS.length],
+      color: DEFAULT_ROW_COLORS[userExpenses.length % DEFAULT_ROW_COLORS.length] + "80",
       isPreTax: false,
       defineBy: "amount",
       amount: 0,
@@ -1117,8 +1117,8 @@ export default function SimpleBudgetTool() {
               <label>Color</label>
               <input
                 type="color"
-                value={addForm.color}
-                onChange={(e) => setAddForm((f) => ({ ...f, color: e.target.value }))}
+                value={addForm.color.slice(0, 7)}
+                onChange={(e) => setAddForm((f) => ({ ...f, color: e.target.value + "80" }))}
                 style={{ ...modalInput, padding: 0, height: 40 }}
               />
             </div>
