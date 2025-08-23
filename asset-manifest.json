@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/EdelEB.github.io/static/css/main.70531dd7.css",
-    "main.js": "/EdelEB.github.io/static/js/main.769596cf.js",
-    "static/js/453.c9394827.chunk.js": "/EdelEB.github.io/static/js/453.c9394827.chunk.js",
-    "index.html": "/EdelEB.github.io/index.html",
-    "main.70531dd7.css.map": "/EdelEB.github.io/static/css/main.70531dd7.css.map",
-    "main.769596cf.js.map": "/EdelEB.github.io/static/js/main.769596cf.js.map",
-    "453.c9394827.chunk.js.map": "/EdelEB.github.io/static/js/453.c9394827.chunk.js.map"
+    "main.css": "/SimpleBudgetToolWeb/static/css/main.70531dd7.css",
+    "main.js": "/SimpleBudgetToolWeb/static/js/main.fb2e6b13.js",
+    "static/js/453.c9394827.chunk.js": "/SimpleBudgetToolWeb/static/js/453.c9394827.chunk.js",
+    "index.html": "/SimpleBudgetToolWeb/index.html",
+    "main.70531dd7.css.map": "/SimpleBudgetToolWeb/static/css/main.70531dd7.css.map",
+    "main.fb2e6b13.js.map": "/SimpleBudgetToolWeb/static/js/main.fb2e6b13.js.map",
+    "453.c9394827.chunk.js.map": "/SimpleBudgetToolWeb/static/js/453.c9394827.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.70531dd7.css",
-    "static/js/main.769596cf.js"
+    "static/js/main.fb2e6b13.js"
   ]
 }
