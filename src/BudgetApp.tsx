@@ -219,7 +219,7 @@ const modalInput: React.CSSProperties = {
 // ---------------------------------------
 // Main Component
 // ---------------------------------------
-export default function SimpleBudgetTool(): JSX.Element {
+export default function SimpleBudgetTool() {
   const [filingStatus, setFilingStatus] = useState<FilingStatus>("single");
   const [timeframe, setTimeframe] = useState<Timeframe>("month");
   const [salaryAnnual, setSalaryAnnual] = useState<number>(65000);
