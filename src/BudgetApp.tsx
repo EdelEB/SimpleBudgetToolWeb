@@ -251,6 +251,8 @@ export default function SimpleBudgetTool() {
   // Modals
   const [showAddModal, setShowAddModal] = useState(false);
   const [showDeleteModal, setShowDeleteModal] = useState(false);
+  const [showNewBudgetModal, setShowNewBudgetModal] = useState(false);
+  const [showTaxesInPie, setShowTaxesInPie] = useState(true);
 
   // Add modal form state
   const [addForm, setAddForm] = useState<{
@@ -381,18 +383,25 @@ export default function SimpleBudgetTool() {
   const pieData = useMemo(
     () =>
       calc.rows
-        .filter((r) => r.amountAnnual > 0)
+        .filter((r) => {
+          if (r.amountAnnual <= 0) return false;
+          if (!showTaxesInPie) {
+            return r.kind !== "tax" && !(r.kind === "user" && (r as UserExpense).isPreTax);
+          }
+          return true;
+        })
         .map((r) => ({
           id: r.id,
           name: r.name,
           value: Math.round(fromAnnual(r.amountAnnual, timeframe)),
           color: r.color,
         })),
-    [calc.rows, timeframe]
+    [calc.rows, timeframe, showTaxesInPie]
   );
 
   // Drag-and-drop for post-tax user rows (reorder)
   const dragId = useRef<string | null>(null);
+  const [dragOverId, setDragOverId] = useState<string | null>(null);
   const onDragStart = (row: AnyExpense, e: React.DragEvent) => {
     if (row.kind === "user" && !row.isPreTax) {
       dragId.current = row.id;
@@ -400,13 +409,18 @@ export default function SimpleBudgetTool() {
     }
   };
   const onDragOver = (row: AnyExpense, e: React.DragEvent) => {
-    if (row.kind === "user" && !row.isPreTax) {
+    if (row.kind === "user" && !row.isPreTax && dragId.current) {
       e.preventDefault();
       e.dataTransfer.dropEffect = "move";
+      setDragOverId(row.id);
     }
+  };
+  const onDragLeave = () => {
+    setDragOverId(null);
   };
   const onDrop = (target: AnyExpense, e: React.DragEvent) => {
     e.preventDefault();
+    setDragOverId(null);
     const srcId = dragId.current;
     dragId.current = null;
     if (!srcId) return;
@@ -428,23 +442,24 @@ export default function SimpleBudgetTool() {
 
   const DragHandle: React.FC<{ row: AnyExpense; muted?: boolean }> = ({ row, muted }) => {
     const enabled = row.kind === "user" && !row.isPreTax;
+    if (!enabled) return null;
     const style: React.CSSProperties = {
       width: 14,
       display: "inline-flex",
-      cursor: enabled ? "grab" : "default",
-      opacity: enabled ? (muted ? 0.6 : 0.95) : 0.25,
+      cursor: "grab",
+      opacity: muted ? 0.6 : 0.95,
       userSelect: "none",
     };
     return (
       <span
         role="img"
         aria-label="drag"
-        draggable={enabled}
-        onDragStart={(e) => enabled && onDragStart(row, e)}
-        onDragOver={(e) => enabled && onDragOver(row, e)}
-        onDrop={(e) => enabled && onDrop(row, e)}
+        draggable={true}
+        onDragStart={(e) => onDragStart(row, e)}
+        onDragOver={(e) => onDragOver(row, e)}
+        onDrop={(e) => onDrop(row, e)}
         style={style}
-        title={enabled ? "Drag to reorder post-tax expenses" : undefined}
+        title="Drag to reorder post-tax expenses"
       >
         ⋮⋮
       </span>
@@ -490,6 +505,9 @@ export default function SimpleBudgetTool() {
       )
     );
   };
+
+  const editColor = (row: UserExpense, color: string) =>
+    setUserExpenses((prev) => prev.map((x) => (x.id === row.id ? { ...x, color: color + "80" } : x)));
 
   // Add modal logic
   const openAddModal = () => {
@@ -706,7 +724,7 @@ export default function SimpleBudgetTool() {
           <button className="btn" onClick={loadBudget} style={btnStyle("#374151", true)}>
             Load Budget
           </button>
-          <button className="btn" onClick={newBudget} style={btnStyle("#1a73e8", true)}>
+          <button className="btn" onClick={() => setShowNewBudgetModal(true)} style={btnStyle("#1a73e8", true)}>
             New Budget
           </button>
         </div>
@@ -857,33 +875,62 @@ export default function SimpleBudgetTool() {
                     const pctSalary = calc.salary > 0 ? (row.amountAnnual / calc.salary) * 100 : 0;
                     const pctPostTax = calc.postTaxBase > 0 ? (row.amountAnnual / calc.postTaxBase) * 100 : 0;
 
+                    const isDragTarget = dragOverId === row.id;
+                    const canDrop = row.kind === "user" && !row.isPreTax && dragId.current;
+
                     return (
-                      <tr key={row.id}>
+                      <tr 
+                        key={row.id}
+                        onDragOver={(e) => canDrop && onDragOver(row, e)}
+                        onDragLeave={onDragLeave}
+                        onDrop={(e) => canDrop && onDrop(row, e)}
+                        style={{
+                          opacity: dragId.current === row.id ? 0.5 : 1,
+                          transform: isDragTarget ? "scale(1.02)" : "scale(1)",
+                          transition: "all 0.2s ease",
+                        }}
+                      >
                         {/* Expense */}
                         <td
                           style={{
                             ...cellBase,
-                            background: row.color,
+                            background: isDragTarget ? "#e3f2fd" : row.color,
                             color: textColor,
                             borderBottom: `1px solid ${borderRow}`,
+                            border: isDragTarget ? "2px dashed #1976d2" : undefined,
                           }}
                         >
                           <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
                             <DragHandle row={row} />
                             {isUser ? (
-                              <input
-                                value={userRow!.name}
-                                onChange={(e) => editName(userRow!, e.target.value)}
-                                style={{
-                                  background: "transparent",
-                                  border: `1px solid ${borderRow}`,
-                                  borderRadius: 6,
-                                  padding: "6px 8px",
-                                  color: textColor,
-                                  width: "100%",
-                                  minWidth: 120,
-                                }}
-                              />
+                              <>
+                                <input
+                                  value={userRow!.name}
+                                  onChange={(e) => editName(userRow!, e.target.value)}
+                                  style={{
+                                    background: "transparent",
+                                    border: `1px solid ${borderRow}`,
+                                    borderRadius: 6,
+                                    padding: "6px 8px",
+                                    color: textColor,
+                                    width: "100%",
+                                    minWidth: 120,
+                                  }}
+                                />
+                                <input
+                                  type="color"
+                                  value={userRow!.color.slice(0, 7)}
+                                  onChange={(e) => editColor(userRow!, e.target.value)}
+                                  style={{
+                                    width: 20,
+                                    height: 20,
+                                    border: "none",
+                                    borderRadius: 4,
+                                    cursor: "pointer",
+                                  }}
+                                  title="Change color"
+                                />
+                              </>
                             ) : (
                               <span style={{ fontWeight: 600 }}>{row.name}</span>
                             )}
@@ -894,9 +941,10 @@ export default function SimpleBudgetTool() {
                         <td
                           style={{
                             ...cellBase,
-                            background: row.color,
+                            background: isDragTarget ? "#e3f2fd" : row.color,
                             color: textColor,
                             borderBottom: `1px solid ${borderRow}`,
+                            border: isDragTarget ? "2px dashed #1976d2" : undefined,
                           }}
                         >
                           <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
@@ -926,9 +974,10 @@ export default function SimpleBudgetTool() {
                         <td
                           style={{
                             ...cellBase,
-                            background: row.color,
+                            background: isDragTarget ? "#e3f2fd" : row.color,
                             color: textColor,
                             borderBottom: `1px solid ${borderRow}`,
+                            border: isDragTarget ? "2px dashed #1976d2" : undefined,
                           }}
                         >
                           <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
@@ -961,9 +1010,10 @@ export default function SimpleBudgetTool() {
                         <td
                           style={{
                             ...cellBase,
-                            background: row.color,
+                            background: isDragTarget ? "#e3f2fd" : row.color,
                             color: textColor,
                             borderBottom: `1px solid ${borderRow}`,
+                            border: isDragTarget ? "2px dashed #1976d2" : undefined,
                           }}
                         >
                           <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
@@ -986,8 +1036,10 @@ export default function SimpleBudgetTool() {
                                 />
                                 <span>%</span>
                               </>
-                            ) : (
+                            ) : row.kind === "discretionary" ? (
                               <span style={{ whiteSpace: "nowrap" }}>{percentHundredth(pctPostTax / 100)}</span>
+                            ) : (
+                              <span style={{ whiteSpace: "nowrap" }}>n/a</span>
                             )}
                           </div>
                         </td>
@@ -1001,6 +1053,18 @@ export default function SimpleBudgetTool() {
 
           {/* Pie chart and tax rates */}
           <div style={{ width: "70%", background: cardBg, border, borderRadius: 12, padding: 8 }}>
+            <div style={{ display: "flex", justifyContent: "center", marginBottom: 8 }}>
+              <button
+                onClick={() => setShowTaxesInPie(!showTaxesInPie)}
+                style={{
+                  ...btnStyle(showTaxesInPie ? "#1a73e8" : "#6b7280", true),
+                  fontSize: 12,
+                  padding: "4px 8px",
+                }}
+              >
+                {showTaxesInPie ? "Hide" : "Show"} taxes & pre-tax
+              </button>
+            </div>
             <div style={{ width: "100%", height: 300 }}>
               <ResponsiveContainer>
                 <PieChart>
@@ -1169,7 +1233,7 @@ export default function SimpleBudgetTool() {
                   <input
                     type="number"
                     min={0}
-                    value={addForm.amount}
+                    value={addForm.amount || ""}
                     onChange={(e) => setAddForm((f) => ({ ...f, amount: Number(e.target.value) || 0 }))}
                     placeholder="e.g., 150"
                     style={modalInput}
@@ -1260,6 +1324,23 @@ export default function SimpleBudgetTool() {
             </button>
             <button onClick={performDelete} style={btnStyle("#b00020", true)}>
               Delete selected
+            </button>
+          </div>
+        </Modal>
+      )}
+
+      {/* New Budget Confirmation Modal */}
+      {showNewBudgetModal && (
+        <Modal onClose={() => setShowNewBudgetModal(false)} title="New Budget">
+          <p style={{ margin: "0 0 16px 0", lineHeight: 1.5 }}>
+            This will reset the table and you will lose all your expenses. Make sure to save first if you don't want to lose your progress.
+          </p>
+          <div style={{ display: "flex", justifyContent: "flex-end", gap: 8 }}>
+            <button onClick={() => setShowNewBudgetModal(false)} style={btnStyle("#555759ff", false)}>
+              Cancel
+            </button>
+            <button onClick={() => { newBudget(); setShowNewBudgetModal(false); }} style={btnStyle("#b00020", true)}>
+              Reset Budget
             </button>
           </div>
         </Modal>
