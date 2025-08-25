@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import React, { useMemo, useState, useEffect } from "react";
 import { Timeframe, FilingStatus } from './types';
 import { btnStyle, modalInput, sanitizeInput, fromAnnual, currencyRounded } from './utils';
 import { useBudgetCalculations } from './hooks/useBudgetCalculations';
@@ -69,9 +69,49 @@ export default function SimpleBudgetTool() {
   const cardBg = "#f7f9fc";
   const border = "1px solid #e5e7eb";
 
+  useEffect(() => {
+    // Initialize AdSense ads
+    try {
+      (window as any).adsbygoogle = (window as any).adsbygoogle || [];
+      (window as any).adsbygoogle.push({});
+      (window as any).adsbygoogle.push({});
+    } catch (err) {
+      console.log('AdSense error:', err);
+    }
+  }, []);
+
   return (
     <div style={{ background: bgApp, minHeight: "100vh", padding: "24px 0" }}>
-      <div style={{ width: "66.666%", margin: "0 auto" }}>
+      <div style={{ display: "flex", width: "100%", gap: "16px" }}>
+        {/* Left Sidebar Ad */}
+        <div style={{ width: "160px", flexShrink: 0 }}>
+          <div style={{ position: "sticky", top: "24px" }}>
+            <div style={{ 
+              width: "160px", 
+              height: "600px", 
+              background: "#f3f4f6", 
+              border: "2px dashed #d1d5db", 
+              borderRadius: 8,
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              fontSize: 12,
+              color: "#6b7280",
+              textAlign: "center",
+              padding: 8
+            }}>
+              Ad Space
+            </div>
+            <ins className="adsbygoogle"
+                 style={{ display: "block", width: "160px", height: "600px", position: "absolute", top: 0 }}
+                 data-ad-client="ca-pub-YOUR_PUBLISHER_ID"
+                 data-ad-slot="YOUR_AD_SLOT_ID"
+                 data-ad-format="auto"></ins>
+          </div>
+        </div>
+        
+        {/* Main Content */}
+        <div style={{ flex: 1 }}>
         <h1 style={{ textAlign: "center", margin: "0 0 16px 0" }}>Simple Budget Tool</h1>
 
         <div
@@ -239,6 +279,60 @@ export default function SimpleBudgetTool() {
             stateName={stateName}
             calc={calc}
           />
+        </div>
+        </div>
+        
+        {/* Right Sidebar Ad */}
+        <div style={{ width: "160px", flexShrink: 0 }}>
+          <div style={{ position: "sticky", top: "24px" }}>
+            <div style={{ 
+              width: "160px", 
+              height: "600px", 
+              background: "#f3f4f6", 
+              border: "2px dashed #d1d5db", 
+              borderRadius: 8,
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              fontSize: 12,
+              color: "#6b7280",
+              textAlign: "center",
+              padding: 8
+            }}>
+              Ad Space
+            </div>
+            <ins className="adsbygoogle"
+                 style={{ display: "block", width: "160px", height: "600px", position: "absolute", top: 0 }}
+                 data-ad-client="ca-pub-YOUR_PUBLISHER_ID"
+                 data-ad-slot="YOUR_AD_SLOT_ID_2"
+                 data-ad-format="auto"></ins>
+          </div>
+        </div>
+      </div>
+
+      {/* Bottom Ad */}
+      <div style={{ display: "flex", justifyContent: "center", marginTop: "24px" }}>
+        <div style={{
+          width: "728px",
+          height: "90px",
+          background: "#f3f4f6",
+          border: "2px dashed #d1d5db",
+          borderRadius: 8,
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          fontSize: 12,
+          color: "#6b7280",
+          textAlign: "center",
+          padding: 8,
+          position: "relative"
+        }}>
+          Ad Space
+          <ins className="adsbygoogle"
+               style={{ display: "block", width: "728px", height: "90px", position: "absolute", top: 0, left: 0 }}
+               data-ad-client="ca-pub-YOUR_PUBLISHER_ID"
+               data-ad-slot="YOUR_AD_SLOT_ID_3"
+               data-ad-format="auto"></ins>
         </div>
       </div>
 
