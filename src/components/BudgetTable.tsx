@@ -101,12 +101,12 @@ export function BudgetTable({
   return (
     <div style={{ background: "#f7f9fc", border: "1px solid #e5e7eb", borderRadius: 10, overflow: "hidden" }}>
       <div style={{ overflowX: "auto" }}>
-        <table style={{ width: "70%", borderCollapse: "separate", borderSpacing: 0, tableLayout: "fixed" }}>
+        <table style={{ width: "100%", borderCollapse: "separate", borderSpacing: 0, tableLayout: "fixed" }}>
           <colgroup>
-            <col style={{ width: 240 }} />
-            <col style={{ width: 150 }} />
-            <col style={{ width: 140 }} />
-            <col style={{ width: 200 }} />
+            <col style={{ width: "35%" }} />
+            <col style={{ width: "20%" }} />
+            <col style={{ width: "20%" }} />
+            <col style={{ width: "25%" }} />
           </colgroup>
           <thead>
             <tr style={{ background: "#e5e7eb" }}>

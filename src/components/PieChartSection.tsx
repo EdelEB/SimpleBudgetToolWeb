@@ -31,7 +31,7 @@ export function PieChartSection({
   const muted = "#4b5563";
 
   return (
-    <div style={{ width: "70%", background: "#f7f9fc", border: "1px solid #e5e7eb", borderRadius: 12, padding: 8 }}>
+    <div style={{ background: "#f7f9fc", border: "1px solid #e5e7eb", borderRadius: 12, padding: 8 }}>
       <div style={{ display: "flex", justifyContent: "center", marginBottom: 8 }}>
         <button
           onClick={onToggleTaxes}

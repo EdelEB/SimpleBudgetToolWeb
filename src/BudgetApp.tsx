@@ -218,7 +218,7 @@ export default function SimpleBudgetTool() {
           </div>
         </div>
 
-        <div style={{ width:"100%", display: "grid", gridTemplateColumns: "1.3fr 1fr", gap: 16, alignItems: "start" }}>
+        <div style={{ width:"100%", display: "grid", gridTemplateColumns: "2fr 1fr", gap: 16, alignItems: "start" }}>
           <BudgetTable
             rows={calc.rows}
             timeframe={timeframe}
