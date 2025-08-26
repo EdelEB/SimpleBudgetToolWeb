@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/SimpleBudgetToolWeb/static/css/main.9033dd93.css",
-    "main.js": "/SimpleBudgetToolWeb/static/js/main.4c697ec9.js",
+    "main.js": "/SimpleBudgetToolWeb/static/js/main.a38cffab.js",
     "index.html": "/SimpleBudgetToolWeb/index.html",
     "main.9033dd93.css.map": "/SimpleBudgetToolWeb/static/css/main.9033dd93.css.map",
-    "main.4c697ec9.js.map": "/SimpleBudgetToolWeb/static/js/main.4c697ec9.js.map"
+    "main.a38cffab.js.map": "/SimpleBudgetToolWeb/static/js/main.a38cffab.js.map"
   },
   "entrypoints": [
     "static/css/main.9033dd93.css",
-    "static/js/main.4c697ec9.js"
+    "static/js/main.a38cffab.js"
   ]
 }
