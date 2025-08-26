@@ -1,6 +1,6 @@
 import React from 'react';
 import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer } from 'recharts';
-import { TaxRatesFile, Timeframe } from '../types';
+import { TaxRatesFile } from '../types';
 import { currencyRounded, percentHundredth, btnStyle } from '../utils';
 
 interface PieChartSectionProps {
