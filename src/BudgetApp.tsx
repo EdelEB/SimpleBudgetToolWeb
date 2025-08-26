@@ -112,7 +112,7 @@ export default function SimpleBudgetTool() {
 
         {/* Main Content */}
         <div style={{ flex: 1 }}>
-        <h1 style={{ textAlign: "center", margin: "0 0 16px 0" }}>Simple Budget Tool</h1>
+        <h1 style={{ textAlign: "center", margin: "0 0 16px 0", fontSize: "1.75rem", fontWeight: "bold" }}>Simple Budget Tool</h1>
 
         <div
           style={{
@@ -130,7 +130,7 @@ export default function SimpleBudgetTool() {
           <input
             value={budgetName}
             onChange={(e) => setBudgetName(sanitizeInput(e.target.value))}
-            placeholder="Budget name (optional)"
+            placeholder="Budget name"
             style={{
               padding: "8px 10px",
               border: "1px solid #d1d5db",

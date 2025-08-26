@@ -189,8 +189,12 @@ export function useBudgetActions(
         await writable.write(blob);
         await writable.close();
         return;
-      } catch {
-        // ignore and fallback
+      } catch (error: any) {
+        // If user cancelled, don't fallback to download
+        if (error.name === 'AbortError') {
+          return;
+        }
+        // Fallback for API unavailability or permission errors
       }
     }
     const a = document.createElement("a");

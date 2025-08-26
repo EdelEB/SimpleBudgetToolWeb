@@ -155,6 +155,5 @@ export function sanitizeInput(input: string): string {
   return input
     .replace(/[<>]/g, '')
     .replace(/javascript:/gi, '')
-    .replace(/on\w+=/gi, '')
-    .trim();
+    .replace(/on\w+=/gi, '');
 }
