@@ -104,12 +104,12 @@ export default function SimpleBudgetTool() {
             </div>
             <ins className="adsbygoogle"
                  style={{ display: "block", width: "160px", height: "600px", position: "absolute", top: 0 }}
-                 data-ad-client="ca-pub-YOUR_PUBLISHER_ID"
-                 data-ad-slot="YOUR_AD_SLOT_ID"
+                 data-ad-client="ca-pub-2961662780194890"
+                 data-ad-slot="4065739991"
                  data-ad-format="auto"></ins>
           </div>
         </div>
-        
+
         {/* Main Content */}
         <div style={{ flex: 1 }}>
         <h1 style={{ textAlign: "center", margin: "0 0 16px 0" }}>Simple Budget Tool</h1>
@@ -303,8 +303,8 @@ export default function SimpleBudgetTool() {
             </div>
             <ins className="adsbygoogle"
                  style={{ display: "block", width: "160px", height: "600px", position: "absolute", top: 0 }}
-                 data-ad-client="ca-pub-YOUR_PUBLISHER_ID"
-                 data-ad-slot="YOUR_AD_SLOT_ID_2"
+                 data-ad-client="ca-pub-2961662780194890"
+                 data-ad-slot="1366622133"
                  data-ad-format="auto"></ins>
           </div>
         </div>
@@ -330,8 +330,8 @@ export default function SimpleBudgetTool() {
           Ad Space
           <ins className="adsbygoogle"
                style={{ display: "block", width: "728px", height: "90px", position: "absolute", top: 0, left: 0 }}
-               data-ad-client="ca-pub-YOUR_PUBLISHER_ID"
-               data-ad-slot="YOUR_AD_SLOT_ID_3"
+               data-ad-client="ca-pub-2961662780194890"
+               data-ad-slot="9053540467"
                data-ad-format="auto"></ins>
         </div>
       </div>
