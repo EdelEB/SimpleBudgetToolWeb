@@ -86,24 +86,8 @@ export default function SimpleBudgetTool() {
         {/* Left Sidebar Ad */}
         <div style={{ width: "160px", flexShrink: 0 }}>
           <div style={{ position: "sticky", top: "24px" }}>
-            <div style={{ 
-              width: "160px", 
-              height: "600px", 
-              background: "#f3f4f6", 
-              border: "2px dashed #d1d5db", 
-              borderRadius: 8,
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              fontSize: 12,
-              color: "#6b7280",
-              textAlign: "center",
-              padding: 8
-            }}>
-              Ad Space
-            </div>
             <ins className="adsbygoogle"
-                 style={{ display: "block", width: "160px", height: "600px", position: "absolute", top: 0 }}
+                 style={{ display: "block", width: "160px", height: "600px" }}
                  data-ad-client="ca-pub-2961662780194890"
                  data-ad-slot="4065739991"
                  data-ad-format="auto"></ins>
@@ -285,24 +269,8 @@ export default function SimpleBudgetTool() {
         {/* Right Sidebar Ad */}
         <div style={{ width: "160px", flexShrink: 0 }}>
           <div style={{ position: "sticky", top: "24px" }}>
-            <div style={{ 
-              width: "160px", 
-              height: "600px", 
-              background: "#f3f4f6", 
-              border: "2px dashed #d1d5db", 
-              borderRadius: 8,
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              fontSize: 12,
-              color: "#6b7280",
-              textAlign: "center",
-              padding: 8
-            }}>
-              Ad Space
-            </div>
             <ins className="adsbygoogle"
-                 style={{ display: "block", width: "160px", height: "600px", position: "absolute", top: 0 }}
+                 style={{ display: "block", width: "160px", height: "600px" }}
                  data-ad-client="ca-pub-2961662780194890"
                  data-ad-slot="1366622133"
                  data-ad-format="auto"></ins>
@@ -312,28 +280,11 @@ export default function SimpleBudgetTool() {
 
       {/* Bottom Ad */}
       <div style={{ display: "flex", justifyContent: "center", marginTop: "24px" }}>
-        <div style={{
-          width: "728px",
-          height: "90px",
-          background: "#f3f4f6",
-          border: "2px dashed #d1d5db",
-          borderRadius: 8,
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          fontSize: 12,
-          color: "#6b7280",
-          textAlign: "center",
-          padding: 8,
-          position: "relative"
-        }}>
-          Ad Space
-          <ins className="adsbygoogle"
-               style={{ display: "block", width: "728px", height: "90px", position: "absolute", top: 0, left: 0 }}
-               data-ad-client="ca-pub-2961662780194890"
-               data-ad-slot="9053540467"
-               data-ad-format="auto"></ins>
-        </div>
+        <ins className="adsbygoogle"
+             style={{ display: "block", width: "728px", height: "90px" }}
+             data-ad-client="ca-pub-2961662780194890"
+             data-ad-slot="9053540467"
+             data-ad-format="auto"></ins>
       </div>
 
       {actions.showAddModal && (
