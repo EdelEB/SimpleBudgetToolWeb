@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/SimpleBudgetToolWeb/static/css/main.9033dd93.css",
-    "main.js": "/SimpleBudgetToolWeb/static/js/main.a38cffab.js",
-    "index.html": "/SimpleBudgetToolWeb/index.html",
-    "main.9033dd93.css.map": "/SimpleBudgetToolWeb/static/css/main.9033dd93.css.map",
-    "main.a38cffab.js.map": "/SimpleBudgetToolWeb/static/js/main.a38cffab.js.map"
+    "main.css": "/static/css/main.9033dd93.css",
+    "main.js": "/static/js/main.a38cffab.js",
+    "index.html": "/index.html",
+    "main.9033dd93.css.map": "/static/css/main.9033dd93.css.map",
+    "main.a38cffab.js.map": "/static/js/main.a38cffab.js.map"
   },
   "entrypoints": [
     "static/css/main.9033dd93.css",
