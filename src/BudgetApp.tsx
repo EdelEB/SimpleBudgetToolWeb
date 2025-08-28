@@ -18,7 +18,6 @@ export default function SimpleBudgetTool() {
     salaryAnnual,
     setSalaryAnnual,
     budgetName,
-    setBudgetName,
     userExpenses,
     setUserExpenses,
     rates,
@@ -75,16 +74,18 @@ export default function SimpleBudgetTool() {
       (window as any).adsbygoogle = (window as any).adsbygoogle || [];
       (window as any).adsbygoogle.push({});
       (window as any).adsbygoogle.push({});
+      (window as any).adsbygoogle.push({});
+      (window as any).adsbygoogle.push({});
     } catch (err) {
       console.log('AdSense error:', err);
     }
   }, []);
 
   return (
-    <div style={{ background: bgApp, minHeight: "100vh", padding: "24px 0" }}>
+    <div style={{ background: bgApp, minHeight: "10vh", padding: "2px 0" }}>
       <div style={{ display: "flex", width: "100%", gap: "16px" }}>
         {/* Left Sidebar Ad */}
-        <div style={{ width: "160px", flexShrink: 0 }}>
+        <div className="mobile-hide" style={{ width: "160px", flexShrink: 0 }}>
           <div style={{ position: "sticky", top: "24px" }}>
             <ins className="adsbygoogle"
                  style={{ display: "block", width: "160px", height: "600px" }}
@@ -108,21 +109,8 @@ export default function SimpleBudgetTool() {
             border,
             borderRadius: 10,
             padding: 12,
-            marginBottom: 10,
           }}
         >
-          <input
-            value={budgetName}
-            onChange={(e) => setBudgetName(sanitizeInput(e.target.value))}
-            placeholder="Budget name"
-            style={{
-              padding: "8px 10px",
-              border: "1px solid #d1d5db",
-              borderRadius: 8,
-              minWidth: 260,
-              background: "#fff",
-            }}
-          />
           <button className="btn" onClick={actions.saveBudget} style={btnStyle("#111827", true)}>
             Save Budget
           </button>
@@ -134,7 +122,17 @@ export default function SimpleBudgetTool() {
           </button>
         </div>
 
+        {/* Middle Banner Ad */}
+        <div style={{ position: "relative", height: "90px", width: "100%" }}>
+          <ins className="adsbygoogle"
+               style={{ position: "absolute", left: "50%", transform: "translateX(-50%)", display: "block", width: "728px", height: "90px" }}
+               data-ad-client="ca-pub-2961662780194890"
+               data-ad-slot="6579474269"
+               data-ad-format="auto"></ins>
+        </div>
+
         <div
+          className="mobile-grid"
           style={{
             display: "grid",
             gridTemplateColumns: "repeat(6, minmax(0, 1fr))",
@@ -242,7 +240,7 @@ export default function SimpleBudgetTool() {
           </div>
         </div>
 
-        <div style={{ width:"100%", display: "grid", gridTemplateColumns: "2fr 1fr", gap: 16, alignItems: "start" }}>
+        <div className="mobile-stack" style={{ width:"100%", display: "grid", gridTemplateColumns: "2fr 1fr", gap: 16, alignItems: "start" }}>
           <BudgetTable
             rows={calc.rows}
             timeframe={timeframe}
@@ -254,20 +252,22 @@ export default function SimpleBudgetTool() {
             onEditColor={actions.handleEditColor}
             onReorderExpenses={actions.handleReorderExpenses}
           />
-          
-          <PieChartSection
-            pieData={pieData}
-            showTaxesInPie={showTaxesInPie}
-            onToggleTaxes={() => setShowTaxesInPie(!showTaxesInPie)}
-            rates={rates}
-            stateName={stateName}
-            calc={calc}
-          />
+
+          <div className="mobile-full-width">
+            <PieChartSection
+              pieData={pieData}
+              showTaxesInPie={showTaxesInPie}
+              onToggleTaxes={() => setShowTaxesInPie(!showTaxesInPie)}
+              rates={rates}
+              stateName={stateName}
+              calc={calc}
+            />
+          </div>
         </div>
         </div>
-        
+
         {/* Right Sidebar Ad */}
-        <div style={{ width: "160px", flexShrink: 0 }}>
+        <div className="mobile-hide" style={{ width: "160px", flexShrink: 0 }}>
           <div style={{ position: "sticky", top: "24px" }}>
             <ins className="adsbygoogle"
                  style={{ display: "block", width: "160px", height: "600px" }}

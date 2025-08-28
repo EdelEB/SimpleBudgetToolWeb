@@ -15,3 +15,71 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* Hide number input spinners */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+/* Mobile responsive styles */
+@media (max-width: 768px) {
+  .mobile-hide {
+    display: none !important;
+  }
+  
+  .mobile-stack {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 16px !important;
+  }
+  
+  .mobile-full-width {
+    width: 100% !important;
+  }
+  
+  .mobile-grid {
+    grid-template-columns: 1fr 1fr !important;
+    grid-template-rows: auto auto auto !important;
+  }
+  
+  table {
+    font-size: 14px !important;
+  }
+  
+  th {
+    white-space: normal !important;
+    word-wrap: break-word !important;
+    font-size: 12px !important;
+  }
+}
+
+/* Control AdSense spacing */
+.adsbygoogle {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.ad-container {
+  height: 90px !important;
+  overflow: hidden !important;
+  display: flex !important;
+  justify-content: center !important;
+  min-height: 90px !important;
+  max-height: 90px !important;
+}
+
+.ad-container * {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.ad-container iframe {
+  margin: 0 !important;
+  padding: 0 !important;
+}

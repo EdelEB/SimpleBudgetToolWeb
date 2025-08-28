@@ -103,10 +103,10 @@ export function BudgetTable({
       <div style={{ overflowX: "auto" }}>
         <table style={{ width: "100%", borderCollapse: "separate", borderSpacing: 0, tableLayout: "fixed" }}>
           <colgroup>
-            <col style={{ width: "35%" }} />
+            <col style={{ width: "40%" }} />
             <col style={{ width: "20%" }} />
             <col style={{ width: "20%" }} />
-            <col style={{ width: "25%" }} />
+            <col style={{ width: "20%" }} />
           </colgroup>
           <thead>
             <tr style={{ background: "#e5e7eb" }}>
@@ -165,7 +165,6 @@ export function BudgetTable({
                               padding: "6px 8px",
                               color: textColor,
                               width: "100%",
-                              minWidth: 120,
                             }}
                           />
                           <input
@@ -211,7 +210,7 @@ export function BudgetTable({
                             borderRadius: 6,
                             padding: "6px 8px",
                             color: textColor,
-                            width: 100,
+                            width: 80,
                           }}
                         />
                       ) : (
@@ -244,7 +243,7 @@ export function BudgetTable({
                               borderRadius: 6,
                               padding: "6px 8px",
                               color: textColor,
-                              width: 75,
+                              width: 60,
                             }}
                           />
                           <span>%</span>
@@ -279,7 +278,7 @@ export function BudgetTable({
                               borderRadius: 6,
                               padding: "6px 8px",
                               color: textColor,
-                              width: 75,
+                              width: 60,
                             }}
                           />
                           <span>%</span>
