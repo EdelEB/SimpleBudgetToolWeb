@@ -123,9 +123,9 @@ export default function SimpleBudgetTool() {
         </div>
 
         {/* Middle Banner Ad */}
-        <div style={{ position: "relative", height: "90px", width: "100%" }}>
+        <div style={{ position: "relative", height: "90px", width: "100%", overflow: "hidden" }}>
           <ins className="adsbygoogle"
-               style={{ position: "absolute", left: "50%", transform: "translateX(-50%)", display: "block", width: "728px", height: "90px" }}
+               style={{ position: "absolute", left: "50%", transform: "translateX(-50%)", display: "block", width: "728px", height: "90px", maxWidth: "100%" }}
                data-ad-client="ca-pub-2961662780194890"
                data-ad-slot="6579474269"
                data-ad-format="auto"></ins>
@@ -279,9 +279,9 @@ export default function SimpleBudgetTool() {
       </div>
 
       {/* Bottom Ad */}
-      <div style={{ display: "flex", justifyContent: "center", marginTop: "24px" }}>
+      <div style={{ display: "flex", justifyContent: "center", marginTop: "24px", overflow: "hidden" }}>
         <ins className="adsbygoogle"
-             style={{ display: "block", width: "728px", height: "90px" }}
+             style={{ display: "block", width: "728px", height: "90px", maxWidth: "100%" }}
              data-ad-client="ca-pub-2961662780194890"
              data-ad-slot="9053540467"
              data-ad-format="auto"></ins>
